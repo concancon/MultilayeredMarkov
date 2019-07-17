@@ -56,6 +56,7 @@ function MultiMarkov() {
             if (i === this.newnotelist.length - 1) {
 
                 this.markObj[this.newnotelist[i].toString()].push(this.newnotelist[0]);
+
             } else {
                 this.markObj[this.newnotelist[i].toString()].push(this.newnotelist[i + 1]);
 
@@ -75,6 +76,7 @@ function MultiMarkov() {
 
 
             //first add another dimension if we are dealing with this.nseq > 1
+
             this.pitches[u] = new Array(this.nstep);
             this.velocities[u] = new Array(this.nstep);
             this.durations[u] = new Array(this.nstep);
