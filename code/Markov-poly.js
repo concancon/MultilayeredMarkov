@@ -34,8 +34,7 @@ var seqtowrite;
 function list() {
     var a = arrayfromargs(arguments);
     myval.push(a);
-	post(myval.toString());
-	post();
+
 
 }
 
