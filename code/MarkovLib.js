@@ -18,7 +18,7 @@ function MultiMarkov() {
 
     //parses input from live.step object and creates a markov object out of it.
     //every unique value is a key whose values are its possible succesors
-
+    //code adapted from Dan Schiffman's tutorial: github.com/codepadawan93/Text-Generator
     this.createMarkov = function(noteList) {
 
 
