@@ -30,8 +30,7 @@ function MultiMarkov() {
             if (typeof (this.newnotelist[j % this.nstep]) === 'undefined') {
 
                 this.newnotelist[j % this.nstep] = (noteList[j].slice(1, noteList[j].length));
-                /*post("newnotelist" + [j % this.nstep] + ": " + this.newnotelist[j % this.nstep]);
-                post();*/
+               
             } else {
 
 
