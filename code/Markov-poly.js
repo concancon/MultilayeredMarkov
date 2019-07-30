@@ -4,26 +4,28 @@ outlets = 12;
 var MarkovLib= require('MarkovLib');
 
 
-//this function encapsulates the stuff that is specific to Max and which cannot be tested
-MarkovLib.MultiMarkov.prototype.outputResult = function() {
-
-    outlet(0, multiMarkov.pitches[0]);
-    outlet(1, multiMarkov.velocities[0]);
-    outlet(2, multiMarkov.durations[0]);
-    outlet(3, multiMarkov.pitches[1]);
-    outlet(4, multiMarkov.velocities[1]);
-    outlet(5, multiMarkov.durations[1]);
-    outlet(6, multiMarkov.pitches[2]);
-    outlet(7, multiMarkov.velocities[2]);
-    outlet(8, multiMarkov.durations[2]);
-    outlet(9, multiMarkov.pitches[3]);
-    outlet(10, multiMarkov.velocities[3]);
-    outlet(11, multiMarkov.durations[3]);
-
-}
 
 ////////////create MultiMarkov instance
 var multiMarkov= new MarkovLib.MultiMarkov();
+
+function outputResult(multiMarkov){
+	
+    outlet(0, multiMarkov.getPitches(0));
+    outlet(1, multiMarkov.getVelocities(0));
+    outlet(2, multiMarkov.getDurations(0));
+    outlet(3, multiMarkov.getPitches(1));
+    outlet(4, multiMarkov.getVelocities(1));
+    outlet(5, multiMarkov.getDurations(1));
+    outlet(6, multiMarkov.getPitches(2));
+    outlet(7, multiMarkov.getVelocities(2));
+    outlet(8, multiMarkov.getDurations(2));
+    outlet(9, multiMarkov.getPitches(3));
+    outlet(10, multiMarkov.getVelocities(3));
+    outlet(11, multiMarkov.getDurations(3));
+
+}
+
+
 
 
 
@@ -40,26 +42,22 @@ function list() {
 
 
 function clear() {
-    multiMarkov.markObj = {};
+
     myval = [];
-    multiMarkov.result = [];
-    multiMarkov.pitches = [];
-    multiMarkov.velocities = [];
-    multiMarkov.durations = [];
-    multiMarkov.newnotelist = [];
+    multiMarkov.clearAll();
 
 }
 
 
 function setnseq(x) {
 
-    multiMarkov.nseq = x;
+    multiMarkov.setNSeq(x);
 
 }
 
 function setnstep(x) {
 
-    multiMarkov.nstep=x;
+    multiMarkov.setNStep(x);
 }
 
 
@@ -73,7 +71,7 @@ function callCreate() {
 function callGenerateandOutput(){
 
     multiMarkov.generate();
-    multiMarkov.outputResult();
+    outputResult(multiMarkov);
 
 }
 

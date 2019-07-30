@@ -7,8 +7,8 @@ function MultiMarkov() {
     this.currentGram = [];
     this.result = [];
     this.newnotelist=[];
-    this.nstep ;
-    this.nseq;
+    this.nstep = 0 ;
+    this.nseq = 0;
     this.markovLength= 0;
     this.pitches = [];
     this.velocities = [];
@@ -128,16 +128,54 @@ function MultiMarkov() {
 
 
 
-    }
+    };
 
     this.getNewNoteListLength= function () {
 
         return this.newnotelist.length;
-    }
+    };
 
     this.getMarkObjLength= function () {
 
         return Object.keys(this.markObj).length;
+    };
+
+    this.getPitches = function (index) {
+        return this.pitches[index];
+    };
+
+    this.getVelocities = function(index) {
+
+        return this.velocities[index];
+
+    };
+    this.getDurations = function(index){
+
+        return this.durations[index];
+    };
+
+    this.setNSeq= function (x){
+
+        this.nseq= x;
+    };
+    this.setNStep= function (x) {
+        this.nstep = x;
     }
+
+
+    this.clearAll = function () {
+
+        this.markObj = {};
+        this.result = [];
+        this.pitches = [];
+        this.velocities = [];
+        this.durations = [];
+        this.newnotelist = [];
+    };
+
+
+
+
+
 }
 exports.MultiMarkov= MultiMarkov;
