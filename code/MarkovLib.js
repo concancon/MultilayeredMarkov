@@ -8,7 +8,7 @@ function MultiMarkov() {
 
 
     /**
-     * Object used to build a mMrkov chain
+     * Object used to build a Markov chain
      @name markObj
      @type object
      *
@@ -73,7 +73,7 @@ function MultiMarkov() {
     /**
      * holds duration data
      @name durations
-     @type string 
+     @type string
      *
      **/
     this.durations = [];

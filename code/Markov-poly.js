@@ -6,6 +6,7 @@ var MarkovLib = require('MarkovLib');
 
 ////////////create MultiMarkov instance
 var multiMarkov = new MarkovLib.MultiMarkov();
+
 /**
  * outputs generated Markov chain
  * @function
@@ -36,7 +37,6 @@ function outputResult(multiMarkov) {
  *
  **/
 var myval = [];
-
 
 
 /**
@@ -100,6 +100,7 @@ function callCreate() {
 
 
 }
+
 /**
  * wrapper function for  multiMarkov.generate() and  outputResult()
  * @function
@@ -112,6 +113,7 @@ function callGenerateandOutput() {
     outputResult(multiMarkov);
 
 }
+
 /**
  * setter for desired number of steps in Markov chain
  * @function
